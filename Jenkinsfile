@@ -9,13 +9,13 @@ pipeline {
 
     // 3. Define the stages of the pipeline
     stages {
-        stage('Checkout') {
-            steps {
-                // Pulls the source code from the Git repository
-                echo 'Checking out the code...'
-                git 'https://github.com/prathampawar-21/DevOps_Exp_9.git'
-            }
-        }
+       stage('Checkout') {
+    steps {
+        echo 'Checking out the code...'
+        // Explicitly specify the branch 'main'
+        git branch: 'main', url: 'https://github.com/prathampawar-21/DevOps_Exp_9.git'
+    }
+}
 
         stage('Build') {
             steps {
